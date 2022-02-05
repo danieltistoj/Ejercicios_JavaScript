@@ -1,5 +1,5 @@
 /*definir una variable*/ 
-let dato = 5
+let dato = 6;
 /*consultar una varible */
-console.log(dato)
+console.log(dato);
 
