@@ -1,0 +1,17 @@
+{
+  "name": "modulo_http",
+  "version": "0.0.1",
+  "description": "un curos de node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "curso",
+    "español"
+  ],
+  "author": "Daniel Tistoj",
+  "license": "ISC"
+}
