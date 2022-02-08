@@ -4,6 +4,12 @@ const express = require('express');
 //al ejecutar express nos devuelve un objeto que es mi servidor 
 const app = express();
 app.use(express.json());
+//no es un metodo http. Es una funcion de express que para toda ruta se puede hacer algo
+app.all('/usuario',(req,res,next)=>{
+    console.log('Por aqui paso');
+    //res.send('Terminado');
+    next();
+});
 //get es para devolver cosas
 app.get('/',(req,res)=>{
     //como respuesta
