@@ -3,21 +3,23 @@ const express = require('express');
 
 //al ejecutar express nos devuelve un objeto que es mi servidor 
 const app = express();
+//get es para devolver cosas
 app.get('/',(req,res)=>{
     //como respuesta
     res.send("Hola mundo");
 });
+//post para resivir un determinado dato para devolver algo
 //si queremos crear otra ruta
-app.get('/about',(req,res)=>{
+app.post('/about',(req,res)=>{
     res.send('About me');
 })
-
+//put tomar los datos que me da el frontend para actualizarlos 
 //si queremos crear otra ruta
-app.get('/contacto',(req,res)=>{
+app.put('/contacto',(req,res)=>{
     res.send('Fromulario de contacto');
 })
-
-app.get('/test',(req,res)=>{
+//delete toma la peticion y elimina un dato dentro del servidor y dar una respuesta
+app.delete('/test',(req,res)=>{
     res.send('<h1>TEST</h1>');
 })
 
