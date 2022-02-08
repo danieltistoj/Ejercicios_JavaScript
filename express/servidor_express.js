@@ -35,8 +35,9 @@ app.post('/about',(req,res)=>{
 })
 //put tomar los datos que me da el frontend para actualizarlos 
 //si queremos crear otra ruta
-app.put('/contacto',(req,res)=>{
-    res.send('Fromulario de contacto');
+app.put('/usuario/:id',(req,res)=>{
+    console.log(req.body);
+    res.send(`Usuario ${req.params.id} actualizado`);
 })
 //delete toma la peticion y elimina un dato dentro del servidor y dar una respuesta
 app.delete('/usuario/:usuarioId',(req,res)=>{
