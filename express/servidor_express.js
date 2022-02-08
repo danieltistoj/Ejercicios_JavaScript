@@ -39,8 +39,8 @@ app.put('/contacto',(req,res)=>{
     res.send('Fromulario de contacto');
 })
 //delete toma la peticion y elimina un dato dentro del servidor y dar una respuesta
-app.delete('/test',(req,res)=>{
-    res.send('<h1>TEST</h1>');
+app.delete('/usuario/:usuarioId',(req,res)=>{
+    res.send(`Usuario ${req.params.usuarioId} eliminado`);
 })
 
 app.listen(3000,()=>{
