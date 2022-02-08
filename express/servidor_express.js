@@ -3,6 +3,7 @@ const express = require('express');
 
 //al ejecutar express nos devuelve un objeto que es mi servidor 
 const app = express();
+app.use(express.json());
 //get es para devolver cosas
 app.get('/',(req,res)=>{
     //como respuesta
@@ -19,11 +20,13 @@ app.get('/usuario',(req,res)=>{
     });
 });
 
-app.post('/usuario',(req,res)=>{
+app.post('/usuario/:id',(req,res)=>{
     //recibe los datos que me esta enviando el cliente
-    console.log(req.body);
+    console.log(req.body)
+    console.log(req.params)
     res.send('Usuario Post recibido')
 });
+//esto es para que express reconozca los json
 
 //post para resivir un determinado dato para devolver algo
 //si queremos crear otra ruta
