@@ -5,6 +5,11 @@ const express = require('express');
 const app = express();
 //morgan
 const morgan = require('morgan');
+//Setting
+//nombre variable, valor variable
+app.set('appName','Daniel Express Tutorial');
+app.set('port',5000);
+app.set('view engine','ejs');
 //Middlewares
 //req: es la informacion del navegador
 function logger(req,res,next){
@@ -12,10 +17,11 @@ function logger(req,res,next){
     next();
 
 }
-
 app.use(express.json());
 //app.use(logger);
 app.use(morgan('dev'));
+
+//Routes
 
 
 //no es un metodo http. Es una funcion de express que para toda ruta se puede hacer algo
@@ -34,7 +40,10 @@ app.get('/',(req,res)=>{
     res.send("Hola mundo");
 });
 */
-
+app.get('/',(req,res)=>{
+    const data = [{name: 'jose'},{name: 'juan'},{name:'pedro'}]
+    res.render('index.ejs',{personas:data});
+});
 app.get('/usuario',(req,res)=>{
     //res.send('Juan Perez');
     //podemos devolver objetos de javascript
@@ -70,6 +79,7 @@ app.delete('/usuario/:usuarioId',(req,res)=>{
 })
 app.use(express.static('public'));
 
-app.listen(3000,()=>{
-    console.log("Servidor en el puerto 3000");
+app.listen(app.get('port'),()=>{
+    console.log(app.get('appName'));
+    console.log("Servidor en el puerto",app.get('port'));
 });
