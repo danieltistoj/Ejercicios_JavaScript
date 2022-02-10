@@ -14,7 +14,7 @@ function logger(req,res,next){
 }
 
 app.use(express.json());
-app.use(logger);
+//app.use(logger);
 app.use(morgan('dev'));
 
 
@@ -27,10 +27,13 @@ app.all('/usuario',(req,res,next)=>{
 });
 */
 //get es para devolver cosas
+
+/*
 app.get('/',(req,res)=>{
     //como respuesta
     res.send("Hola mundo");
 });
+*/
 
 app.get('/usuario',(req,res)=>{
     //res.send('Juan Perez');
@@ -65,7 +68,7 @@ app.put('/usuario/:id',(req,res)=>{
 app.delete('/usuario/:usuarioId',(req,res)=>{
     res.send(`Usuario ${req.params.usuarioId} eliminado`);
 })
-app.use(express.static('./public/index.html'));
+app.use(express.static('public'));
 
 app.listen(3000,()=>{
     console.log("Servidor en el puerto 3000");
