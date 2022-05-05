@@ -129,3 +129,53 @@ console.log(arrayFecha)
 //obtener hora
 let hora = fecha.toString().split(" ")[4].split(":")[0]
 console.log("hora:",hora)
+
+//Objet
+//objeto coleccion de variables 
+
+const libro = {
+    titulo:"Aprendiendo JavaScript",
+    autor:"Carlos Azaustre",
+    numPaginas:100,
+    editorial:"carlosazaustre.es",
+    precio:"24.90",
+    leer: function(){
+        console.log("He leido un libro")
+    }
+}
+
+libro.titulo
+libro["titulo"]
+libro.titulo = "Desarrollo web con react" //modificar
+
+let page = "numPaginas"
+libro[page]
+libro.leer()
+
+let libro2 = {}
+let libro3 = new Object({
+    titulo:"algo"
+})
+
+let libro4 = {
+    titulo: "Aprendiendo JavaScript",
+    autor:{
+        nombre:"Jose daniel",
+        edad: 22,
+        redes:{
+            twitch:"algo.com",
+            tiktok:"tiktok.com"
+        }
+    }
+}
+
+libro4.autor.nombre
+libro4["autor"]["redes"]["twitch"]
+
+const coche1 = {marca:"Tesla",modelo:"x"}
+const coche2 = {marca:"Tesla",modelo:"x"}
+coche1 === coche2 //no son iguales, ya que la referencia es distinta
+coche1.marca === coche2.marca //la marca si es la misma
+const coche3 = coche1
+coche3 === coche1 //esto si es true, ya que tiene la misa referencia 
+
