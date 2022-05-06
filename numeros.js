@@ -179,3 +179,4 @@ coche1.marca === coche2.marca //la marca si es la misma
 const coche3 = coche1
 coche3 === coche1 //esto si es true, ya que tiene la misa referencia 
 
+console.log(3 == 3)
